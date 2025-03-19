@@ -98,7 +98,7 @@ Now that you have defined your own custom error, here is how to reject a promise
 function MyAsyncFunc: TJSPromise;
 begin
   Result := TJSPromise.New(
-    procedure(_, reject: TJSPromiseResolver)
+    procedure(resolve, reject: TJSPromiseResolver)
     begin
       reject(TMyCustomError.Create('my custom error message', 404));
     end
